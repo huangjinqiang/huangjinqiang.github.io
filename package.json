@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/huangjinqiang/huangjinqiang.github.io#readme",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "@vuepress/plugin-nprogress": "^1.8.2",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-dynamic-title": "^1.0.0"
   }
 }
