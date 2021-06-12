@@ -10,7 +10,7 @@ categories:
 permalink: /leetcode/227
 ---
 
-> 基本计算器II [https://leetcode-cn.com/problems/basic-calculator-ii/](https://leetcode-cn.com/problems/basic-calculator-ii/)
+[基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/)
 
 ### 题意
 * 输入只含数字、空格和四则运算的字符串，算出运算结果
@@ -101,47 +101,47 @@ while (opes.length) {
  * @return {number}
  */
 var calculate = function(s) {
-    const nums = []
-    const opes = []
+  const nums = []
+  const opes = []
 
-    let numIdx = 0
-    for (let i = 0; i < s.length; i += 1) {
-        switch (s[i]) {
-            case '+':
-            case '-':
-            case '*':
-            case '/':
-                while (opes.length) {
-                    if (canLeftCalc(opes[0], opes[1])) {
-                        nums.splice(0, 2, calc(nums[0], nums[1], opes.shift()))
-                        continue
-                    }
+  let numIdx = 0
+  for (let i = 0; i < s.length; i += 1) {
+    switch (s[i]) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        while (opes.length) {
+          if (canLeftCalc(opes[0], opes[1])) {
+            nums.splice(0, 2, calc(nums[0], nums[1], opes.shift()))
+            continue
+          }
 
-                    if (canLeftCalc(opes[numIdx - 1], s[i])) {
-                        nums.splice(numIdx - 1, 2, calc(nums[numIdx - 1], nums[numIdx], opes.pop()))
-                        numIdx -= 1
-                        continue
-                    }
-                    break
-                }
-
-                opes.push(s[i])
-                numIdx = opes.length
-                break
-            case ' ':
-                break;
-            default:
-                nums[numIdx] = (nums[numIdx] || 0) * 10 + +s[i]
+          if (canLeftCalc(opes[numIdx - 1], s[i])) {
+            nums.splice(numIdx - 1, 2, calc(nums[numIdx - 1], nums[numIdx], opes.pop()))
+            numIdx -= 1
+            continue
+          }
+          break
         }
-    }
-    if (opes.length === 0) {
-        return nums[0]
-    }
 
-    if (opes.length === 1) {
-        return calc(nums[0], nums[1], opes[0])
+        opes.push(s[i])
+        numIdx = opes.length
+        break
+      case ' ':
+        break;
+      default:
+        nums[numIdx] = (nums[numIdx] || 0) * 10 + +s[i]
     }
+  }
+  if (opes.length === 0) {
+    return nums[0]
+  }
 
-    return calc(nums[0], calc(nums[1], nums[2], opes[1]), opes[0])
+  if (opes.length === 1) {
+    return calc(nums[0], nums[1], opes[0])
+  }
+
+  return calc(nums[0], calc(nums[1], nums[2], opes[1]), opes[0])
 };
 ```
