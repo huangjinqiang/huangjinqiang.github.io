@@ -12,3 +12,6 @@ https://leetcode-cn.com/leetbook/read/top-interview-questions/xm8xw2/
 
 ## 数据结构
 * [基本计算器II](/leetcode/227)
+
+## 算法
+* [摩尔投票法](/leetcode/Boyer_Moore_majority_vote_algorithm)
