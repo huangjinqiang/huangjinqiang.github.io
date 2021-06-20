@@ -13,3 +13,15 @@ permalink: /leetcode/top-interview-questions
 * [多数元素](/leetcode/top-interview-questions/xm77tm/)
 * [搜索二维矩阵II](/leetcode/top-interview-questions/xmlwi1/)
 * [合并俩个有序数组](/leetcode/top-interview-questions/xmi2l7/)
+* [鸡蛋掉落](/)
+
+### 字符串
+* [验证回文串](/leetcode/top-interview-questions/xah8k6/)
+* [分割回文串](/)
+* [单词拆分](/)
+* [单词拆分II](/)
+* [实现Trie()](/)
+* [有效的字母异位词]((/leetcode/top-interview-questions/xar9lv/)
+* [字符串的第一个唯一字符](/leetcode/top-interview-questions/xaph0j/)
+* [反转字符串](/leetcode/top-interview-questions/xapbdt/)
+
