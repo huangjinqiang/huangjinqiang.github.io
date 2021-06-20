@@ -17,7 +17,7 @@ permalink: /leetcode/top-interview-questions
 
 ### 字符串
 * [验证回文串](/leetcode/top-interview-questions/xah8k6/)
-* [分割回文串](/)
+* [分割回文串](/leetcode/top-interview-questions/xaxi62/)
 * [单词拆分](/)
 * [单词拆分II](/)
 * [实现Trie()](/)
