@@ -5,7 +5,7 @@ https://leetcode-cn.com/leetbook/read/top-interview-questions/xm8xw2/
 
 ## 动态规划
 * [打家劫舍](/leetcode/199)
-* [分割回文串II](https://leetcode-cn.com/problems/palindrome-partitioning-ii/)
+* [分割回文串](/leetcode/palindrome-partitioning)
 
 ## 大数
 * [大数相乘](/leetcode/43)
