@@ -16,3 +16,6 @@ https://leetcode-cn.com/leetbook/read/top-interview-questions/xm8xw2/
 
 ## 算法
 * [摩尔投票法](/leetcode/Boyer_Moore_majority_vote_algorithm)
+
+## LCP
+* [传递信息](/leetcode/lcp/07)
