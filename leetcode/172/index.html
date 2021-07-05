@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>阶乘后的零 | Just In Time</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="Just In Time">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d5da9378.js" as="script"><link rel="preload" href="/assets/js/2.a408d6fb.js" as="script"><link rel="preload" href="/assets/js/19.258285a1.js" as="script"><link rel="prefetch" href="/assets/js/10.d89b6268.js"><link rel="prefetch" href="/assets/js/11.5c204bec.js"><link rel="prefetch" href="/assets/js/12.3d545639.js"><link rel="prefetch" href="/assets/js/13.1df77612.js"><link rel="prefetch" href="/assets/js/14.bf831bfb.js"><link rel="prefetch" href="/assets/js/15.cdff416c.js"><link rel="prefetch" href="/assets/js/16.4f19f1bf.js"><link rel="prefetch" href="/assets/js/17.e5b9952b.js"><link rel="prefetch" href="/assets/js/18.d9044e5a.js"><link rel="prefetch" href="/assets/js/20.5fa7e8d1.js"><link rel="prefetch" href="/assets/js/21.f9baf558.js"><link rel="prefetch" href="/assets/js/22.3892644c.js"><link rel="prefetch" href="/assets/js/23.f4762ff3.js"><link rel="prefetch" href="/assets/js/24.190bb4c4.js"><link rel="prefetch" href="/assets/js/25.6ca1f467.js"><link rel="prefetch" href="/assets/js/26.fcfea81d.js"><link rel="prefetch" href="/assets/js/27.aa4c7016.js"><link rel="prefetch" href="/assets/js/28.0bc9f71e.js"><link rel="prefetch" href="/assets/js/29.bfd7ce14.js"><link rel="prefetch" href="/assets/js/3.f18b92a3.js"><link rel="prefetch" href="/assets/js/30.44066194.js"><link rel="prefetch" href="/assets/js/31.bf09e68e.js"><link rel="prefetch" href="/assets/js/32.1fa35374.js"><link rel="prefetch" href="/assets/js/4.2bc4b644.js"><link rel="prefetch" href="/assets/js/5.c8916aca.js"><link rel="prefetch" href="/assets/js/6.aff956db.js"><link rel="prefetch" href="/assets/js/7.8670a7c4.js"><link rel="prefetch" href="/assets/js/8.d59aa85d.js"><link rel="prefetch" href="/assets/js/9.8289232e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Just In Time</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/leetcode/" class="nav-link router-link-active">
+  leetcode
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/leetcode/" class="nav-link router-link-active">
+  leetcode
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a href="https://leetcode-cn.com/problems/factorial-trailing-zeroes/" target="_blank" rel="noopener noreferrer">阶乘后的零<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="题意"><a href="#题意" class="header-anchor">#</a> 题意</h3> <ul><li>给定n，计算n!后面会带几个0</li></ul> <h3 id="分析"><a href="#分析" class="header-anchor">#</a> 分析</h3> <ul><li>能带几个0，即要求，能被10整除多少次
+<ul><li>10的质因数为2、5，且能知，在n!中，分解每个数，最终产生5的数量会小于产生2的数量</li> <li>即实际是求能被5整除多少次</li></ul></li> <li>给定n，能被5整除的次数为 Math.floor(n / 5) + Math.floor(n / 25) + ... + Math.floor(n / Math.pow(5, k))，且n &gt;= Math.pow(5, k)，n &lt; Math.pow(5, k + 1)
+<ul><li>从0到n，有Math.floor(n / 5)个数能被5整除
+<ul><li>当一个数能被5整除，便能分解出1个5来最终生成一个后缀0</li></ul></li> <li>从0到n，有Math.floor(n / 25)个数能被25整除
+<ul><li>当一个数能被25整除，便能分解出2个5来最终生成二个后缀0</li> <li>而在上轮统计时，已经消耗了一个5，即实际还能分解出Math.floor(n / 25)个5</li></ul></li> <li>从0到n，有Math.floor(n / 125)个数能被125整除
+<ul><li>当一个数能被125整除，便能分解出3个5来最终生成二个后缀0</li> <li>而在前俩轮统计时，已经消耗了2个5，即实际还能分解出Math.floor(n / 125)个5</li></ul></li> <li>...</li> <li>直到 n &lt; Math.pow(5, k)，此时无法再分解出5来参与计算了</li></ul></li></ul> <h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number} n
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">trailingZeroes</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> base <span class="token operator">=</span> <span class="token number">5</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> base<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> count<span class="token punctuation">)</span>
+
+    base <span class="token operator">*=</span> <span class="token number">5</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> count
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/5/2021, 3:51:03 PM</span></div></footer> <!----> </main></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.d5da9378.js" defer></script><script src="/assets/js/2.a408d6fb.js" defer></script><script src="/assets/js/19.258285a1.js" defer></script>
+  </body>
+</html>
