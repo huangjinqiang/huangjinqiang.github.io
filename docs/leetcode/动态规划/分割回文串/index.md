@@ -10,4 +10,6 @@ permalink: /leetcode/palindrome-partitioning
 ### lc上4个分割回文串的题目，一个中等仨困难
 * [分割回文串I](/leetcode/131)
 * [分割回文串II](/leetcode/132)
+* [分割回文串III](/leetcode/1278)
+* [分割回文串IV](/leetcode/1745)
 
